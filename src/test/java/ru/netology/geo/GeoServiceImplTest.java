@@ -12,9 +12,7 @@ class GeoServiceImplTest {
 
     @Test
     void byIpTest() {
-        GeoService geoService = Mockito.mock(GeoServiceImpl.class);
-        Mockito.when(geoService.byIp("127.0.0.1"))
-                .thenReturn(new Location(null, null, null, 0));
+        GeoService geoService = new GeoServiceImpl();
         Location actual = geoService.byIp ("127.0.0.1");
         Location expected = new Location(null, null, null, 0);
         Assertions.assertEquals(actual, expected);
